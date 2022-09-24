@@ -1,0 +1,27 @@
+**/log
+**/tmp
+**/node_modules
+**/.git
+**/.vscode
+
+#
+# OS X
+#
+**/.DS_Store
+**/.AppleDouble
+**/.LSOverride
+
+## Environment normalisation:
+**/.bundle
+**/public/uploads
+**/misc/debug
+**/public/.gitignore
+
+# Nuxt
+**/.nuxt
+**/.nuxt-storybook
+**/dist
+
+# CI/CD & huskey
+**/.github
+**/.husky

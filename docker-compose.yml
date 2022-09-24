@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:11.9
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=yusuke7828
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  frontend-app:
+    build: ./frontend_app
+    image: frontend/app
+    tty: true
+    command: bash -c "cd frontend && yarn install && yarn dev"
+    volumes:
+      - ./frontend_app:/app/frontend:delegated
+    ports:
+      - "3000:3000"
+  backend-app:
+    build: ./backend_app
+    image: backend/app
+    tty: true
+    command: bash -c "cd backend && yarn install && yarn start"
+    volumes:
+      - ./backend_app:/app/backend:delegated
+    ports:
+      - "5000:5000"
+
+volumes:
+  postgres:

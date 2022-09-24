@@ -1,0 +1,29 @@
+.footer {
+  min-height: 100px;
+  font-size: 9px;
+  .about-title {
+    padding-top: 30px;
+    color: #fff;
+    & > div {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 10px;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-left: 10px solid #fff;
+        border-bottom: 5px solid transparent;
+      }
+    }
+  }
+}
+@media (max-width: 640px) {
+  .about-title {
+    div::before {
+      left: 2px !important;
+    }
+  }
+}
