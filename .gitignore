@@ -3,10 +3,12 @@
 # dependencies
 node_modules
 
+#backend dist
+dist
 
 # next.js
 /.next/
-/frontend/.next
+/frontend_app/.next
 /out/
 
 # production
